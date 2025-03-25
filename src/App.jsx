@@ -8,8 +8,8 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import { Layout, AllTodo, PendingTodo, CompleteTodo } from "./components/index";
-// import { pendingLoader } from "./components/PendingTodo";
-// import { completeLoader } from "./components/CompleteTodo";
+import { pendingLoader } from "./components/PendingTodo";
+import { completeLoader } from "./components/CompleteTodo";
 
 function App() {
   const [todos, setTodos] = useState([]);
@@ -94,12 +94,12 @@ function App() {
       <Route path="/" element={<Layout />}>
         <Route path="" element={<AllTodo />} />
         <Route
-          // loader={() => pendingLoader({ context: { todos } })}
+          loader={() => pendingLoader({ context: { todos } })}
           path="pendingTodo"
           element={<PendingTodo />}
         />
         <Route
-          // loader={() => completeLoader({ context: { todos } })}
+          loader={() => completeLoader({ context: { todos } })}
           path="completeTodo"
           element={<CompleteTodo />}
         />
