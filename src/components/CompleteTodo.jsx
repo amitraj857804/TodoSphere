@@ -39,8 +39,8 @@ function CompleteTodo() {
 
 export default CompleteTodo;
 
-export const completeLoader = ({ context }) => {
-  const todos = context.todos; 
-  return todos.filter((todo) => todo.completed); 
-};
+// export const completeLoader = ({ context }) => {
+//   const todos = context.todos; 
+//   return todos.filter((todo) => todo.completed); 
+// };
 

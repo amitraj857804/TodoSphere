@@ -35,7 +35,7 @@ function PendingTodo() {
 
 export default PendingTodo;
 
-export const pendingLoader = ({ context }) => {
-  const todos = context.todos; 
-  return todos.filter((todo) => !todo.completed); 
-};
+// export const pendingLoader = ({ context }) => {
+//   const todos = context.todos; 
+//   return todos.filter((todo) => !todo.completed); 
+// };
