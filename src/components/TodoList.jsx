@@ -27,6 +27,12 @@ function TodoList({ todo }) {
   const toogle = () => {
     toggleTodo(todo.id);
   };
+  const handleKeyDown = (e) => {
+    if (e.key === "Enter" && isTodoEditable) {
+      editTodo();
+    }
+  };
+
 
   return (
     <div
@@ -49,6 +55,7 @@ function TodoList({ todo }) {
           } ${todo.completed ? "line-through" : ""}`}
           value={todoMsg}
           onChange={(e) => setTodoMsg(e.target.value)}
+          onKeyDown={handleKeyDown} 
           readOnly={!isTodoEditable}
           required
         />
@@ -56,6 +63,7 @@ function TodoList({ todo }) {
       </div>
       {/* Edit, Save Button */}
       <button
+      type="submit"
         className="inline-flex w-8 h-8 rounded-lg text-sm border cursor-pointer border-black/10 justify-center items-center bg-gray-50 hover:bg-gray-200 shrink-0 disabled:opacity-50"
         onClick={() => {
           if (todo.completed) return;

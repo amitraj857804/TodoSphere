@@ -2,10 +2,13 @@ import React, { useEffect, useState } from "react";
 import { TodoList } from "./index";
 import ClearComplete from "./ClearComplete";
 import { useLoaderData } from "react-router-dom";
+import { useTodo } from "../contexts/TodoContext";
 
 function CompleteTodo() {
 
-  const todoCompleted = useLoaderData();
+  // const todoCompleted = useLoaderData();
+  const { todos } = useTodo(); 
+  const todoCompleted = todos.filter((todo) => todo.completed);
 
 
 

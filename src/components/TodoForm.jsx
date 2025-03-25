@@ -8,6 +8,10 @@ function TodoForm() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (todoMsg.trim() === "") {
+      setTodoMsg("")
+      return;
+    }
     addTodo({ id: Date.now(), todoTitle: todoMsg, completed: false });
     setTodoMsg("");
   };

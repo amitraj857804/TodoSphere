@@ -11,7 +11,7 @@ function ClearPending() {
   return (
    
       <button
-        className="cursor-pointer hover:underline  duration-200"
+        className="cursor-pointer hover:underline underline lg:no-underline  duration-200"
         onClick={handleClick}
       >
         {" "}

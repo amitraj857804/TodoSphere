@@ -4,7 +4,9 @@ import { useTodo } from "../contexts/TodoContext";
 import { useLoaderData } from "react-router-dom";
 
 function PendingTodo() {
-  const todoPending = useLoaderData();
+  // const todoPending = useLoaderData();
+  const { todos } = useTodo(); 
+    const todoPending = todos.filter((todo) => !todo.completed);
 
   if (!todoPending || todoPending.length === 0) {
     return (
