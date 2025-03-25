@@ -4,14 +4,12 @@ import { useTodo } from "../contexts/TodoContext";
 import { useLoaderData } from "react-router-dom";
 
 function PendingTodo() {
-  // const todoPending = useLoaderData();
-  const { todos } = useTodo(); 
-    const todoPending = todos.filter((todo) => !todo.completed);
+  const todoPending = useLoaderData();
 
   if (!todoPending || todoPending.length === 0) {
     return (
       <div className="flex flex-wrap items-center justify-center my-10">
-      You haven't any pending tasks
+        You haven't any pending tasks
       </div>
     );
   }
@@ -36,6 +34,6 @@ function PendingTodo() {
 export default PendingTodo;
 
 export const pendingLoader = ({ context }) => {
-  const todos = context.todos; 
-  return todos.filter((todo) => !todo.completed); 
+  const todos = context.todos;
+  return todos.filter((todo) => !todo.completed);
 };

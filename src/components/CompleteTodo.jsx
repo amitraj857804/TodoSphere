@@ -5,12 +5,7 @@ import { useLoaderData } from "react-router-dom";
 import { useTodo } from "../contexts/TodoContext";
 
 function CompleteTodo() {
-
-  // const todoCompleted = useLoaderData();
-  const { todos } = useTodo(); 
-  const todoCompleted = todos.filter((todo) => todo.completed);
-
-
+  const todoCompleted = useLoaderData();
 
   if (!todoCompleted || todoCompleted.length === 0) {
     return (
@@ -40,7 +35,6 @@ function CompleteTodo() {
 export default CompleteTodo;
 
 export const completeLoader = ({ context }) => {
-  const todos = context.todos; 
-  return todos.filter((todo) => todo.completed); 
+  const todos = context.todos;
+  return todos.filter((todo) => todo.completed);
 };
-
